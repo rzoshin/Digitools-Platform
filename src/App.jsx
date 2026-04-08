@@ -1,10 +1,21 @@
 import './App.css'
+import Navbar from './components/Navbar/Navbar'
 
 function App() {
 
   return (
     <>
-    <h2>Digitools Platform</h2>
+    <header>
+      <nav>
+        <Navbar />
+      </nav>
+    </header>
+    <main>
+
+    </main>
+    <footer>
+
+    </footer>
     </>
   )
 }
