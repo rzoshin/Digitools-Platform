@@ -1,10 +1,10 @@
-import tickMark from '../assets/products/check.png'
-import firstImg from '../assets/products/writing_tool.png'
-import secondImg from '../assets/products/design-tool.png'
-import thirdImg from '../assets/products/Camera.png'
-import fourthImg from '../assets/products/operation.png'
-import fifthImg from '../assets/products/portfolio.png'
-import sixthImg from '../assets/products/social-media.png'
+import tickMark from '../../assets/products/check.png'
+import firstImg from '../../assets/products/writing_tool.png'
+import secondImg from '../../assets/products/design-tool.png'
+import thirdImg from '../../assets/products/Camera.png'
+import fourthImg from '../../assets/products/operation.png'
+import fifthImg from '../../assets/products/portfolio.png'
+import sixthImg from '../../assets/products/social-media.png'
 
 
 const ProductCard = ({product}) => {

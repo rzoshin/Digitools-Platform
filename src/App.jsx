@@ -2,16 +2,25 @@ import { Suspense } from 'react'
 import './App.css'
 import Banner from './components/Banner/Banner'
 import Navbar from './components/Navbar/Navbar'
-import Premium from './components/Premium/Premium'
+import Premium from './components/Products/Products'
 import Stats from './components/Stats/Stats'
+import GetStarted from './components/GetStarted/GetStarted'
+import Pricing from './components/Pricing/Pricing'
 
 const fetchProductsData = async () => {
-  const res = await fetch('/data.json');
+  const res = await fetch('/productsData.json');
+  return res.json();
+}
+
+const fetchPricingData = async () => {
+  const res = await fetch('./pricingData.json');
   return res.json();
 }
 
 function App() {
   const productsPromise = fetchProductsData();
+  const pricingPromise = fetchPricingData();
+
   return (
     <>
     <header>
@@ -24,6 +33,10 @@ function App() {
       <Stats />
       <Suspense fallback={<span className="loading loading-dots loading-xl"></span>}>
         <Premium productsPromise={productsPromise}/>
+      </Suspense>
+      <GetStarted />
+      <Suspense fallback={<span className="loading loading-dots loading-xl"></span>}>
+        <Pricing pricingPromise={pricingPromise}/>
       </Suspense>
     </main>
     <footer>

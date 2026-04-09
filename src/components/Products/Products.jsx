@@ -1,5 +1,5 @@
-import React, { use } from 'react';
-import ProductCard from '../../ui/ProductCard';
+import { use } from 'react';
+import ProductCard from './ProductCard';
 
 const Premium = ({productsPromise}) => {
     const productsData = use(productsPromise);
@@ -16,7 +16,7 @@ const Premium = ({productsPromise}) => {
                     </div>
                 </div>
             </div>
-            <div className='grid grid-cols-3 gap-7.5 mt-10'> 
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7.5 mt-10'> 
             {
                 productsData.map(product => {
                     return <ProductCard key={product.id} product={product}/>
