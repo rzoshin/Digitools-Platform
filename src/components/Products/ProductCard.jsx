@@ -8,20 +8,13 @@ import sixthImg from "../../assets/products/social-media.png";
 import { useState } from "react";
 import { TiTick } from "react-icons/ti";
 
-const ProductCard = ({ product, cartData, setCartData}) => {
-  const [selected, setSelected] = useState(false);
-  const handleBuy = ({product}) => {
-    const exists = cartData.find(item => item.id === product.id);
-    if(exists) {
-        return;
-    }
-    else {
-        let newCartData = [...cartData, product];
-        setCartData(newCartData);
-    }
-    
-    setSelected(true);
-  };
+const ProductCard = ({ product, cartData, setCartData, selectedIds, setSelectedIds }) => {
+  const selected = selectedIds.includes(product.id);
+  const handleBuy = ({ product }) => {
+        if (cartData.find(item => item.id === product.id)) return;
+        setCartData([...cartData, product]);
+        setSelectedIds(prev => [...prev, product.id]);      
+      };
   return (
     <div className="flex flex-col relative p-6 gap-4 border border-[#F2F2F2] rounded-2xl">
       <span

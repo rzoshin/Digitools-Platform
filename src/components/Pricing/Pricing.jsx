@@ -10,7 +10,7 @@ const Pricing = ({pricingPromise}) => {
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-7.5'>
             {
                 pricingData.map(pricing => {
-                    return <PricingCard key={pricing.id} pricing={pricing}/>
+                    return <PricingCard key={pricing.id} pricing={pricing} />
                 })
 
             }

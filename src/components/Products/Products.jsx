@@ -5,7 +5,8 @@ import ProductCard from './ProductCard';
 const Products = ({productsPromise}) => {
     const productsData = use(productsPromise);
     const [isCartOpen, setIsCartOpen] = useState(false);
-    const [cartData, setCartData] = useState([])
+    const [cartData, setCartData] = useState([]);
+    const [selectedIds, setSelectedIds] = useState([]);
 
     const handleCartOpen = () => {
         setIsCartOpen(true);
@@ -16,6 +17,10 @@ const Products = ({productsPromise}) => {
             <ProductCard product={product} />
         })
     }
+    const handleCheckOut = () => {
+        setCartData([]);
+        setSelectedIds([]);
+    };
     return (
         <div className="mt-30 max-w-[80%] mx-auto">
             <div className='flex flex-col text-center gap-4'>
@@ -28,7 +33,7 @@ const Products = ({productsPromise}) => {
                     </div>
                 </div>
             </div>
-            <Card productsData={productsData} cartData={cartData} setCartData={setCartData} isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen}/>
+            <Card productsData={productsData} cartData={cartData} setCartData={setCartData} isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} selectedIds={selectedIds} setSelectedIds={setSelectedIds} onCheckOut={handleCheckOut}/>
         </div>
     );
 };

@@ -4,25 +4,21 @@ import ProductCard from '../components/Products/ProductCard';
 import Products from '../components/Products/Products';
 import Stats from '../components/Stats/Stats';
 
-const Card = ({productsData, cartData, setCartData, isCartOpen}) => {
+const Card = ({productsData, cartData, setCartData, isCartOpen, selectedIds, setSelectedIds, onCheckOut}) => {
     return (
         <div>
+            <div className={`mt-10 ${isCartOpen ? 'block' : 'hidden'}`}>
             {
-            isCartOpen ?
-            <div className='mt-10'>
-            {
-                <Cart cartData={cartData} setCartData={setCartData}/>
+                <Cart cartData={cartData} setCartData={setCartData} onCheckOut={onCheckOut}/>
             }
             </div>
-            :
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7.5 mt-10'>
+            <div className={`${isCartOpen ? 'hidden' : 'block'} grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7.5 mt-10`}>
                 {
                     productsData.map(product => {
-                        return <ProductCard product={product} cartData={cartData} setCartData={setCartData}/>
-                })
+                        return <ProductCard product={product} cartData={cartData} setCartData={setCartData} selectedIds={selectedIds} setSelectedIds={setSelectedIds}/>
+                    })
                 }
             </div>
-            }
         </div>
     );
 };

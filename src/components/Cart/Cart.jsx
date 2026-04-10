@@ -2,7 +2,7 @@ import { FiShoppingCart } from 'react-icons/fi';
 import cartImg from '../../assets/products/shopping-cart.png'
 import CartCard from './CartCard';
 
-const Cart = ({cartData, setCartData}) => {
+const Cart = ({cartData, setCartData, onCheckOut}) => {
 
     const handleCartData = () => {
         setCartData([]);
@@ -25,7 +25,7 @@ const Cart = ({cartData, setCartData}) => {
                 }               
                 </span>
             </div>
-            <button onClick={() => {handleCartData()}} className='btn block bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white rounded-[100px]'>Proceed To Checkout</button>
+            <button onClick={onCheckOut} className='btn block bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white rounded-[100px]'>Proceed To Checkout</button>
         </div>
     );
 };
