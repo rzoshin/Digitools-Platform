@@ -2,13 +2,13 @@ import { Suspense } from 'react'
 import './App.css'
 import Banner from './components/Banner/Banner'
 import Navbar from './components/Navbar/Navbar'
-import Premium from './components/Products/Products'
 import Stats from './components/Stats/Stats'
 import GetStarted from './components/GetStarted/GetStarted'
 import Pricing from './components/Pricing/Pricing'
 import Join from './components/Join/Join'
 import Footer from './components/Footer/Footer'
 import Copyright from './components/Footer/Copyright'
+import Products from './components/Products/Products'
 
 const fetchProductsData = async () => {
   const res = await fetch('/productsData.json');
@@ -35,7 +35,7 @@ function App() {
     <main>
       <Stats />
       <Suspense fallback={<span className="loading loading-dots loading-xl"></span>}>
-        <Premium productsPromise={productsPromise}/>
+        <Products productsPromise={productsPromise}/>
       </Suspense>
       <GetStarted />
       <Suspense fallback={<span className="loading loading-dots loading-xl"></span>}>
@@ -49,6 +49,7 @@ function App() {
     </footer>
     </>
   )
+  
 }
 
 export default App

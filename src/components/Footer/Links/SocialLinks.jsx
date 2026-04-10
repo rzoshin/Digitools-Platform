@@ -6,7 +6,7 @@ import { TbBrandInstagramFilled } from 'react-icons/tb';
 const SocialLinks = () => {
     return (
         <div>
-            <h3 className='text-white mb-4'>Social Links</h3>
+            <h3 className='text-white mb-4 font-medium text-xl'>Social Links</h3>
             <div className="flex gap-3">
                 <div className='w-10 h-10 rounded-full bg-white flex items-center justify-center'>
                     <TbBrandInstagramFilled className='w-5 h-5'/>

@@ -2,8 +2,8 @@ import { FiShoppingCart } from "react-icons/fi";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100 shadow-sm">
-        <div className="navbar-start">
+    <div className="flex justify-between max-w-[80%] mx-auto bg-base-100 py-6.5">
+        <div className="">
           <div className="dropdown">
             <div
               tabIndex={0}
@@ -51,7 +51,7 @@ const Navbar = () => {
             DigiTools
           </a>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
               <a>Products</a>
@@ -70,7 +70,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end flex gap-4">
+        <div className="flex gap-4 items-center">
           <FiShoppingCart />
           <a>Login</a>
           <button className="btn bg-linear-to-r from-[#4F39F6] to-[#9514FA] rounded-full py-4 px-3 text-white font-semibold font-inter">
