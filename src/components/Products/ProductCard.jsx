@@ -16,7 +16,7 @@ const ProductCard = ({ product, cartData, setCartData, selectedIds, setSelectedI
         setSelectedIds(prev => [...prev, product.id]);      
       };
   return (
-    <div className="flex flex-col relative p-6 gap-4 border border-[#F2F2F2] rounded-2xl">
+    <div className="flex flex-col relative p-6 gap-4 border border-[#F2F2F2] rounded-2xl hover:-translate-y-1 hover:shadow-md">
       <span
         className={`absolute top-2.5 right-2.5 badge badge-soft ${product.tagType === "best-seller" ? "badge-warning" : product.tagType === "popular" ? "badge-primary" : "badge-success"}`}
       >

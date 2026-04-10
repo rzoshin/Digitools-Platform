@@ -72,8 +72,8 @@ const Navbar = () => {
         </div>
         <div className="flex gap-4 items-center">
           <FiShoppingCart />
-          <a>Login</a>
-          <button className="btn bg-linear-to-r from-[#4F39F6] to-[#9514FA] rounded-full py-4 px-3 text-white font-semibold font-inter">
+          <a className="hover:cursor-pointer hover:text-[#9514FA]">Login</a>
+          <button className="btn bg-linear-to-r from-[#4F39F6] to-[#9514FA] rounded-full py-4 px-3 text-white font-semibold font-inter hover:shadow-sm hover:shadow-fuchsia-900">
             Get Started
           </button>
         </div>

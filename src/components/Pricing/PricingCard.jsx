@@ -3,7 +3,7 @@ import tickMark from "../../assets/products/check.png";
 const PricingCard = ({ pricing }) => {
   return (
     <div
-      className={`card p-6 rounded-2xl relative ${pricing.tagType === "popular" ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white" : "bg-[#F9FAFC]"}`}
+      className={`card p-6 rounded-2xl relative hover:-translate-y-1 hover:shadow-md ${pricing.tagType === "popular" ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white" : "bg-[#F9FAFC]"}`}
     >
       {
         pricing.tagType === "popular" && (<div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#BB4D00] bg-[#FEF3C6] w-27.75 h-7.75 flex justify-center items-center rounded-full text-sm">Most Popular</div>)
