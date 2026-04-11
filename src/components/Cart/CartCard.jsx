@@ -6,8 +6,14 @@ import fifthImg from '../../assets/products/portfolio.png'
 import sixthImg from '../../assets/products/social-media.png'
 
 import img from '../../assets/products/shopping-cart.png'
-const CartCard = ({cart}) => {
+import { toast } from 'react-toastify'
+const CartCard = ({cart, cartData, setCartData}) => {
     console.log(cart)
+    const handleDelete = (cart) => {
+        let newCart = cartData.filter(key => key.name != cart.name);
+        setCartData(newCart);
+        toast.success(`${cart.name} removed from cart!`);
+    }
     return (
         <div className='flex justify-between items-center bg-[#F9FAFC] p-5 rounded-2xl'>
             <div className='flex gap-4'>
@@ -20,8 +26,10 @@ const CartCard = ({cart}) => {
                     <span>${cart.price}</span>
                 </div>
             </div>
-            <div className='text-red-500'>
-                Remove
+            <div>
+                <button onClick={() => handleDelete(cart)} class="btn btn-ghost text-red-500">
+                    Remove
+                </button>
             </div>
             
         </div>

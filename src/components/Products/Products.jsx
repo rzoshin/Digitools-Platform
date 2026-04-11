@@ -1,6 +1,7 @@
 import { use, useState } from 'react';
 import Card from '../../ui/Card';
 import ProductCard from './ProductCard';
+import { toast } from 'react-toastify';
 
 const Products = ({productsPromise}) => {
     const productsData = use(productsPromise);
@@ -20,6 +21,7 @@ const Products = ({productsPromise}) => {
     const handleCheckOut = () => {
         setCartData([]);
         setSelectedIds([]);
+        toast.success('Checkout successful!');
     };
     return (
         <div className="mt-30 max-w-[80%] mx-auto">

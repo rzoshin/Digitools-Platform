@@ -7,14 +7,17 @@ import fifthImg from "../../assets/products/portfolio.png";
 import sixthImg from "../../assets/products/social-media.png";
 import { useState } from "react";
 import { TiTick } from "react-icons/ti";
+import { toast } from "react-toastify";
 
 const ProductCard = ({ product, cartData, setCartData, selectedIds, setSelectedIds }) => {
   const selected = selectedIds.includes(product.id);
   const handleBuy = ({ product }) => {
         if (cartData.find(item => item.id === product.id)) return;
         setCartData([...cartData, product]);
-        setSelectedIds(prev => [...prev, product.id]);      
+        setSelectedIds(prev => [...prev, product.id]);
+        toast.success(`${product.name} added to cart!`);    
       };
+      
   return (
     <div className="flex flex-col relative p-6 gap-4 border border-[#F2F2F2] rounded-2xl hover:-translate-y-1 hover:shadow-md">
       <span

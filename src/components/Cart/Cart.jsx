@@ -14,7 +14,7 @@ const Cart = ({cartData, setCartData, onCheckOut}) => {
             {
                 cartData.length === 0 ? <div className='text-[#627382] text-center p-20 flex flex-col items-center justify-center gap-4'><div><FiShoppingCart className='w-20 h-20 opacity-40'/></div><div>Your cart is empty</div></div> :
                 cartData.map(cart => {
-                    return <CartCard cart={cart} />
+                    return <CartCard cart={cart} cartData={cartData} setCartData={setCartData} />
                 })
             }
             </div>
