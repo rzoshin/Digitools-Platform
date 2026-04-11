@@ -4,7 +4,7 @@ import { IoPlayOutline } from "react-icons/io5";
 const Banner = () => {
   return (
     <div className="border-t border-[#F2F2F2]">
-      <div className="flex gap-15 py-15 items-center justify-between max-w-[80%] mx-auto">
+      <div className="flex flex-col-reverse md:flex-row gap-15 py-15 items-center justify-between max-w-[80%] mx-auto">
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-1 py-2 px-4 w-fit rounded-full bg-[#E1E7FF]">
             <div className="flex items-center justify-center w-4 h-4 bg-linear-to-r from-[#4F39F6]/20 to-[#9514FA]/20 rounded-full relative">
