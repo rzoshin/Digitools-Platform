@@ -9,6 +9,7 @@ import Join from './components/Join/Join'
 import Footer from './components/Footer/Footer'
 import Copyright from './components/Footer/Copyright'
 import Products from './components/Products/Products'
+import { ToastContainer } from 'react-toastify'
 
 const fetchProductsData = async () => {
   const res = await fetch('/productsData.json');
@@ -38,6 +39,7 @@ function App() {
         <Products productsPromise={productsPromise}/>
       </Suspense>
       <GetStarted />
+      <ToastContainer />
       <Suspense fallback={<span className="loading loading-dots loading-xl"></span>}>
         <Pricing pricingPromise={pricingPromise}/>
       </Suspense>

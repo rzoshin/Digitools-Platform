@@ -4,15 +4,17 @@ import thirdImg from '../../assets/products/Camera.png'
 import fourthImg from '../../assets/products/operation.png'
 import fifthImg from '../../assets/products/portfolio.png'
 import sixthImg from '../../assets/products/social-media.png'
-
 import img from '../../assets/products/shopping-cart.png'
 import { toast } from 'react-toastify'
-const CartCard = ({cart, cartData, setCartData}) => {
+
+const CartCard = ({cart, cartData, setCartData, selectedIds, setSelectedIds,}) => {
     console.log(cart)
     const handleDelete = (cart) => {
         let newCart = cartData.filter(key => key.name != cart.name);
+        let newSelectedIds = selectedIds.filter(id => id != cart.id);
         setCartData(newCart);
-        toast.success(`${cart.name} removed from cart!`);
+        setSelectedIds(newSelectedIds);
+        toast.error(`${cart.name} removed from cart!`);
     }
     return (
         <div className='flex justify-between items-center bg-[#F9FAFC] p-5 rounded-2xl'>
