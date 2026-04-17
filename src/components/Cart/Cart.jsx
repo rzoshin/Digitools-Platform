@@ -1,14 +1,17 @@
 import { FiShoppingCart } from 'react-icons/fi';
 import cartImg from '../../assets/products/shopping-cart.png'
 import CartCard from './CartCard';
+import { useContext } from 'react';
+import { dataContext } from '../../context/DataProvider';
 
-const Cart = ({cartData, setCartData, onCheckOut, selectedIds, setSelectedIds,}) => {
-
+const Cart = () => {
+    const requiredData = useContext(dataContext);
+    const {cartData, setCartData, selectedIds, setSelectedIds, handleCheckOut} = requiredData;
     const handleCartData = () => {
         setCartData([]);
     }
     return (
-        <div className='flex flex-col gap-6 p-10 border border-[#F2F2F2] rounded-2xl'>
+        <div id="cart" className='flex flex-col gap-6 p-10 border border-[#F2F2F2] rounded-2xl'>
             <h4 className='font-bold text-2xl'>Your Cart</h4>
             <div className='space-y-4'>
             {
@@ -25,7 +28,7 @@ const Cart = ({cartData, setCartData, onCheckOut, selectedIds, setSelectedIds,})
                 }               
                 </span>
             </div>
-            <button onClick={onCheckOut} className='btn block bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white rounded-[100px]'>Proceed To Checkout</button>
+            <button onClick={handleCheckOut} className='btn block bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white rounded-[100px]'>Proceed To Checkout</button>
         </div>
     );
 };

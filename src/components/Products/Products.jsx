@@ -1,30 +1,19 @@
-import { use, useState } from 'react';
+import { use, useContext, useState } from 'react';
 import Card from '../../ui/Card';
 import ProductCard from './ProductCard';
 import { toast } from 'react-toastify';
+import { dataContext } from '../../context/DataProvider';
 
 const Products = ({productsPromise}) => {
-    const productsData = use(productsPromise);
-    const [isCartOpen, setIsCartOpen] = useState(false);
-    const [cartData, setCartData] = useState([]);
-    const [selectedIds, setSelectedIds] = useState([]);
+    const requiredData = useContext(dataContext);
+    const {
+    isCartOpen,
+    handleCartOpen,
+    handleCartClose,
+  } = requiredData;
 
-    const handleCartOpen = () => {
-        setIsCartOpen(true);
-    }
-    const handleCartClose = () => {
-        setIsCartOpen(false);
-        productsData.map(product => {
-            <ProductCard product={product} />
-        })
-    }
-    const handleCheckOut = () => {
-        setCartData([]);
-        setSelectedIds([]);
-        toast.success('Checkout successful!');
-    };
     return (
-        <div className="mt-30 max-w-[80%] mx-auto">
+        <div id="products" className="mt-30 max-w-[80%] mx-auto">
             <div className='flex flex-col text-center gap-4'>
                 <h2 className='font-extrabold text-5xl text-[#101727]'>Premium Digital Tools</h2>
                 <p className='text-[#627382]'>Choose from our curated collection of premium digital products designed <br />to boost your productivity and creativity.</p>
@@ -35,7 +24,7 @@ const Products = ({productsPromise}) => {
                     </div>
                 </div>
             </div>
-            <Card productsData={productsData} cartData={cartData} setCartData={setCartData} isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} selectedIds={selectedIds} setSelectedIds={setSelectedIds} onCheckOut={handleCheckOut}/>
+            <Card />
         </div>
     );
 };

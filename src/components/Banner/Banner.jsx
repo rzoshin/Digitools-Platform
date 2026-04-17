@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import bannerImg from "../../assets/banner.png";
 import { IoPlayOutline } from "react-icons/io5";
 
@@ -25,9 +26,9 @@ const Banner = () => {
             software—all in one place. Start creating faster today.
           </p>
           <div className="flex mt-8 gap-4">
-            <button className="btn bg-linear-to-r from-[#4F39F6] to-[#9514FA] rounded-[100px] py-3 px-4 text-white hover:shadow-sm hover:shadow-fuchsia-900 hover:-translate-0.5">
+            <a href="#products" className="btn bg-linear-to-r from-[#4F39F6] to-[#9514FA] rounded-[100px] py-3 px-4 text-white hover:shadow-sm hover:shadow-fuchsia-900 hover:-translate-0.5">
               Explore Products
-            </button>
+            </a>
             <button className="btn p-[1.5px] rounded-[100px] bg-linear-to-r from-[#4F39F6] to-[#9514FA] border-none hover:shadow-sm hover:shadow-fuchsia-900 hover:-translate-0.5">
               <span className="flex items-center gap-2 px-4 py-2 rounded-[100px] bg-base-100 ">
                 <IoPlayOutline className="text-[#6D28D9] font-medium" />

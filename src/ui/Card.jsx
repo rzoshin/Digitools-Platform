@@ -1,21 +1,22 @@
-import React from 'react';
+import { useContext } from 'react';
 import Cart from '../components/Cart/Cart';
 import ProductCard from '../components/Products/ProductCard';
-import Products from '../components/Products/Products';
-import Stats from '../components/Stats/Stats';
+import { dataContext } from '../context/DataProvider';
 
-const Card = ({productsData, cartData, setCartData, isCartOpen, selectedIds, setSelectedIds, onCheckOut}) => {
+const Card = () => {
+    const requiredData = useContext(dataContext);
+    const { isCartOpen, productsData } = requiredData;
     return (
         <div>
             <div className={`mt-10 ${isCartOpen ? 'block' : 'hidden'}`}>
             {
-                <Cart cartData={cartData} setCartData={setCartData} onCheckOut={onCheckOut} selectedIds={selectedIds} setSelectedIds={setSelectedIds}/>
+                <Cart/>
             }
             </div>
             <div className={`${isCartOpen ? 'hidden' : 'block'} grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7.5 mt-10`}>
                 {
                     productsData.map(product => {
-                        return <ProductCard product={product} cartData={cartData} setCartData={setCartData} selectedIds={selectedIds} setSelectedIds={setSelectedIds}/>
+                        return <ProductCard product={product}/>
                     })
                 }
             </div>

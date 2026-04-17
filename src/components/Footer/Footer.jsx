@@ -7,7 +7,7 @@ import Copyright from "./Copyright";
 
 const Footer = () => {
   return (
-    <div className="pt-30 pb-20 bg-[#101727]">
+    <div id="footer" className="pt-30 pb-20 bg-[#101727]">
       <div className="max-w-[80%] mx-auto flex justify-between flex-wrap gap-10">
         <div>
           <h3 className="text-white mb-4 text-4xl font-extrabold">DigiTools</h3>

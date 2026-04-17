@@ -5,11 +5,21 @@ import thirdImg from "../../assets/products/Camera.png";
 import fourthImg from "../../assets/products/operation.png";
 import fifthImg from "../../assets/products/portfolio.png";
 import sixthImg from "../../assets/products/social-media.png";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { TiTick } from "react-icons/ti";
 import { toast } from "react-toastify";
+import { dataContext } from "../../context/DataProvider";
 
-const ProductCard = ({ product, cartData, setCartData, selectedIds, setSelectedIds }) => {
+const ProductCard = ({ product }) => {
+  const requiredData = useContext(dataContext);
+  const {
+    cartData,
+    setCartData,
+    selectedIds,
+    setSelectedIds,
+
+  } = requiredData;
+
   const selected = selectedIds.includes(product.id);
   const handleBuy = ({ product }) => {
         if (cartData.find(item => item.id === product.id)) return;
